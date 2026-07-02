@@ -17,5 +17,18 @@
   "bugs": {
     "url": "https://github.com/PauMacasaet/atm-api/issues"
   },
-  "homepage": "https://github.com/PauMacasaet/atm-api#readme"
+  "homepage": "https://github.com/PauMacasaet/atm-api#readme",
+  "dependencies": {
+    "@koa/router": "^15.6.0",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "jsonwebtoken": "^9.0.3",
+    "knex": "^3.3.0",
+    "koa": "^3.2.1",
+    "koa-bodyparser": "^4.4.1",
+    "pg": "^8.22.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
