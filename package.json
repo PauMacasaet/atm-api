@@ -2,6 +2,7 @@
   "name": "atm-api",
   "version": "1.0.0",
   "description": "Backend REST API built with:",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.js",
