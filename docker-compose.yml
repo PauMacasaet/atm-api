@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     
-    container_name: atm-api\
+    container_name: atm-api
 
     ports:
       - "3000:3000"
@@ -46,4 +46,4 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
 volumes:
-  postgres_data:
+  postgres-data:
