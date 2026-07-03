@@ -1,0 +1,49 @@
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    
+    container_name: atm-api\
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+    environment:
+      PORT: 3000
+      DB_HOST: POSTGRES
+      DB_PORT: 5432
+      DB_NAME: atm
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      JWT_SECRET: supersecret
+
+    depends_on:
+      - postgres
+
+  postgres:
+
+    image: postgres:17-alpine
+
+    container_name: atm-postgres
+
+    restart: always
+
+    ports:
+      - "5432:5432"
+
+    environment:
+      POSTGRES_DB: atm
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
