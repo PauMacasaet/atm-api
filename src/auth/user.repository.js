@@ -1,7 +1,7 @@
 import database from "../config/database.js";
 
-export async function findByUsername(username) {
-    return database('users')
+export async function findByUsername(username, trx = database) {
+    return trx('users')
         .where({ username })
         .first();
 }
