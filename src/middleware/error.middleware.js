@@ -21,10 +21,11 @@ export default async function errorMiddleware(ctx, next) {
         console.error(error);
 
         ctx.status = 500;
+
         ctx.body = {
             success: false,
             error: {
-                type: 'InternalServerError',
+                code: 'INTERNAL_SERVER_ERROR',
                 message: 'An unexpected error occurred.'
             }
         }
