@@ -1,10 +1,9 @@
 import dotenv from "dotenv";
 import app from "./app.js";
 import database from "./config/database.js";
+import config from "./config/index.js";
 
 dotenv.config();
-
-const PORT = process.env.PORT || 3000;
 
 async function startServer() {
     try {
@@ -12,8 +11,8 @@ async function startServer() {
 
         console.log("Connected to PostgreSQL");
 
-        app.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`);
+        app.listen(config.app.port, () => {
+            console.log(`Server running on port ${config.app.port}`);
         });
     } catch (error) {
         console.error(error);
